@@ -1,0 +1,177 @@
+ADMIN:
+package com.example.domain;
+
+public class Admin extends Employee{
+
+	public Admin(int employeeId, String employeeName, String employeeSSN, double employeeSalary) {
+		super(employeeId, employeeName, employeeSSN, employeeSalary);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+}
+
+DIRECTOR
+package com.example.domain;
+
+public class Director extends Manager{
+	private double budget;
+	
+  public Director(int employeeId, String employeeName, String employeeSSN, double employeeSalary) {
+		super(employeeId, employeeName, employeeSSN, employeeSalary);
+	this.budget=budget;
+	}
+
+	public double getBudget() {
+		return budget;
+	}
+
+	
+
+
+}
+EMPLOYEE:
+package com.example.domain;
+
+public class Employee {
+private	int employeeId;
+private	String employeeName;
+ private String	employeeSSN;
+  private  double employeeSalary;
+	
+	public Employee(int employeeId, String employeeName, String employeeSSN, double employeeSalary) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.employeeSSN = employeeSSN;
+		this.employeeSalary = employeeSalary;
+	}
+	public int getEmployeeId() {
+		return employeeId;
+	}
+	
+	public String getEmployeeName() {
+		return employeeName;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+	public String getEmployeeSSN() {
+		return employeeSSN;
+	}
+	
+	public double getemployeeSalary() {
+		return employeeSalary;
+	}
+
+public double raiseSalary(double increase) {
+	   return employeeSalary+=increase;
+   }
+	
+
+}
+EMPLOYEE_TEST
+package com.example.domain;
+import com.example.domain.Admin;
+import com.example.domain.Manager;
+import com.example.domain.Engineer;
+import com.example.domain.Employee;
+import com.example.domain.Director;
+public class Employee_Test {
+	public static void printEmployee(Employee e1) {
+		System.out.println("Employee ID"+e1.getEmployeeId());
+		System.out.println("Employee name"+e1.getEmployeeName());
+		System.out.println("Employee ssn"+e1.getEmployeeSSN());
+		System.out.println("employee salary"+e1.getemployeeSalary());
+		System.out.println("------------------");
+	}
+	public static void main(String args[])
+	{
+		Employee[] a=new Employee[20];
+		for(Employee aa:a)
+		{
+			
+		}
+		
+		Engineer e2=new Engineer(110,"JANE SMITH","012-345-678",123478.09);
+		/*e2.raiseSalary(200);
+		e2.setEmployeeName("sss");*/
+		Employee_Test.printEmployee(e2);
+		
+		Manager m1=new Manager(207,"TOM","563-456-678",7);
+		m1.raiseSalary(2000);
+		m1.setEmployeeName("aaaaa");
+		Employee_Test.printEmployee(m1);
+		
+	    Admin a1=new Admin(307,"ssss","123-456-678",10);
+	    a1.raiseSalary(30000);
+	    a1.setEmployeeName("kkkkk");
+	    Employee_Test.printEmployee(a1);
+	    
+	    Director d=new Director(12,"aaaa","234-567-789",200);
+	    d.raiseSalary(4000);
+	    d.setEmployeeName("jjjj");
+	    Employee_Test.printEmployee(d);
+		/*Employee e1=new Employee();*/
+		
+		/*e1.setEmployeeId(101);
+		e1.setEmployeeName("JANE SMITH");
+		e1.setEmployeeSSN("012-345-678");
+		e1.setEmployeeSalary(123478.09);
+		System.out.println("Employee ID"+e1.getEmployeeId());
+		System.out.println("Employee name"+e1.getEmployeeName());
+		System.out.println("Employee ssn"+e1.getEmployeeSSN());
+		System.out.println("employee salary"+e1.getEmployeeSalary());*/
+		/*Employee e2=new Employee();
+		e2.setEmployeeId(102);
+		e2.setEmployeeName(" SMITH");
+		e2.setEmployeeSSN("123-345-678");
+		e2.setEmployeeSalary(234556.09);
+		System.out.println("Employee ID"+e2.getEmployeeId());
+		System.out.println("Employee name"+e2.getEmployeeName());
+		System.out.println("Employee ssn"+e2.getEmployeeSSN());
+		System.out.println("employee salary"+e2.getEmployeeSalary());*/
+	}
+	
+
+}
+ENGINEER
+package com.example.domain;
+
+public class Engineer extends Employee{
+
+	
+	public Engineer(int employeeId, String employeeName, String employeeSSN, double employeeSalary) {
+		super(employeeId, employeeName, employeeSSN, employeeSalary);
+		// TODO Auto-generated constructor stub
+	}
+	
+
+}
+MANAGER
+package com.example.domain;
+
+public class Manager extends Employee{
+	private String deptName;
+	private Employee[] Staff;
+    public  String getdeptName()
+    {
+	return deptName;
+}
+	public Manager(int employeeId, String employeeName, String employeeSSN, double employeeSalary) {
+		super(employeeId, employeeName, employeeSSN, employeeSalary);
+		
+	}
+	
+	public Manager(int employeeId, String employeeName, String employeeSSN, double employeeSalary, Employee[] staff) {
+		super(employeeId, employeeName, employeeSSN, employeeSalary);
+		Staff = staff;
+	}
+	public int findEmployee()
+	{
+		
+	}
+	
+}
+
+

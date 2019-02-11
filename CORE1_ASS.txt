@@ -1,0 +1,112 @@
+ACCOUNT 1
+package example.com;
+
+public class Account1 {
+	private int id;
+	private CustomerOne customer;
+	private double balance;
+
+	public Account1(int id, CustomerOne customer,double balance) {
+		this.id = id;
+		this.customer = customer;
+		this.balance = balance;
+		
+	}
+
+
+	public String toString() {
+		return "Account1[id=" + id + ", customer=" + customer + ", balance=" + balance + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	
+
+	public CustomerOne getCustomer() {
+		return customer;
+	}
+
+	
+
+	
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	
+   public double deposit( double amount) {
+   return amount+=balance;	
+}
+   public double withdraw( double amount) {
+	   if(balance >= amount) {
+		  System.out.println("Subtract amount to balance");
+	   }
+		   else
+		   {
+			   System.out.println("amount withdrawn");
+		  
+	   }
+	   return balance;
+   
+   }
+}
+CUSTOMERONE
+
+package example.com;
+	public class CustomerOne {
+		private int Id;
+		private  String name;
+		private char gender;
+
+		public CustomerOne( int Id,  String name,char gender) {
+			this.Id = Id;
+			this.name = name;
+			this.gender = gender;
+			
+			
+		}
+
+		public int getId() {
+			return Id;
+		}
+
+		public   String getName() {
+			return name;
+		}
+
+		public char getGender() {
+			return gender;
+		}
+
+		
+		public String toString() {
+			return "CustomerOne [Id=" + Id + ", name=" + name + "]";
+		}
+
+		
+		
+
+	}
+
+PRACTICE ACCOUNT
+package example.com;
+
+public class PracticeAccount {
+
+		public static void main(String[] args) {
+			CustomerOne cone = new CustomerOne(1,"hello customer",'m');
+			Account1 a3 = new Account1(33,cone,9999.77);
+			System.out.println("Details are------");
+			System.out.println(a3);
+			a3.deposit(7878.67);
+			a3.withdraw(5665.87);
+		}
+
+	}
+
